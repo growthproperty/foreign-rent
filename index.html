@@ -5,183 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社グロースプロパティ | オーナー様向け転貸・運用代行</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0F172A', /* Slate 900 base */
+                            800: '#1E293B',
+                        },
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body { font-family: 'Noto Sans JP', sans-serif; }
-        h1, h2, h3, .serif { font-family: 'Noto Serif JP', serif; }
+        /* 見出しは明朝体で高級感を演出 */
+        h1, h2, h3, .serif-font { font-family: 'Noto Serif JP', serif; }
+        
         .bg-hero {
-            /* 背景画像 */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
+        }
+        /* ゴールドのグラデーションボタン */
+        .btn-gold {
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #D97706 100%);
+            background-size: 200% auto;
+            transition: 0.5s;
+        }
+        .btn-gold:hover {
+            background-position: right center;
         }
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-slate-800 antialiased">
 
-    <header class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-bold text-slate-800">Growth Property</div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#target" class="text-gray-600 hover:text-slate-800">対象となる物件</a>
-                <a href="#solution" class="text-gray-600 hover:text-slate-800">仕組み・メリット</a>
-                <a href="#faq" class="text-gray-600 hover:text-slate-800">よくある質問</a>
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm fixed w-full z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-bold text-navy-900 serif-font tracking-tight">Growth Property</div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#target" class="text-gray-500 hover:text-navy-900 transition tracking-wide">対象物件</a>
+                <a href="#solution" class="text-gray-500 hover:text-navy-900 transition tracking-wide">独自の強み</a>
+                <a href="#faq" class="text-gray-500 hover:text-navy-900 transition tracking-wide">FAQ</a>
             </nav>
-            <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 md:px-6 text-sm md:text-base rounded-full transition duration-300">
+            <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="bg-navy-900 hover:bg-navy-800 text-white font-medium py-2 px-6 text-sm rounded transition duration-300 tracking-wider">
                 お問い合わせ
             </a>
         </div>
     </header>
 
-    <section class="bg-hero h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-amber-400 font-bold text-lg md:text-2xl mb-6 md:mb-8 tracking-[0.2em]">OWNER DIRECT OFFER</p>
+    <section class="bg-hero h-screen flex items-center justify-center text-center px-4 relative">
+        <div class="absolute inset-4 md:inset-8 border border-white/20 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto z-10">
+            <p class="text-gold-400 font-bold text-sm md:text-xl mb-8 tracking-[0.3em] uppercase">Owner Direct Offer</p>
             
-            <h1 class="text-4xl md:text-7xl text-white font-bold leading-tight md:leading-snug mb-8 md:mb-10 shadow-sm">
+            <h1 class="text-4xl md:text-7xl text-white font-bold leading-tight md:leading-snug mb-10 shadow-sm serif-font">
                 その空室、<br>
-                「優良な外国人材」で<br>
+                「優良な外国富裕層」で<br>
                 即・満室にします。
             </h1>
             
-            <p class="text-gray-100 text-lg md:text-2xl mb-10 md:mb-14 leading-relaxed font-medium">
-                <span class="bg-amber-600 px-3 py-1 md:px-4 md:py-2 text-white font-bold text-base md:text-xl rounded inline-block mb-4 md:mb-6">都内・分譲マンション・家賃20万円〜 対象</span><br>
-                管理会社変更不要。言語の壁・生活習慣の指導はすべて弊社が担当。<br class="md:hidden">
-                高属性なグローバル人材をターゲットにした<br class="md:hidden">
+            <div class="w-24 h-0.5 bg-gold-500 mx-auto mb-10"></div>
+
+            <p class="text-white text-lg md:text-2xl mb-12 leading-relaxed font-light tracking-wide">
+                <span class="block text-gold-400 font-medium mb-4">都内分譲マンションオーナー様へ</span>
+                高属性なグローバル人材をターゲットにした<br class="hidden md:inline">
                 新しい賃貸運営のご提案。
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 md:py-5 md:px-12 rounded-lg text-lg md:text-2xl transition duration-300 shadow-lg">
+                <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="btn-gold text-white font-bold py-5 px-10 rounded shadow-2xl text-lg md:text-xl tracking-wider transform transition hover:-translate-y-1">
                     借上げ・法人契約の相談をする
                 </a>
             </div>
-            <p class="text-gray-300 text-sm md:text-base mt-6 md:mt-8">※成約時の広告料（AD）等は一切不要です</p>
+            <p class="text-white/60 text-xs md:text-sm mt-6 font-light">※成約時の広告料（AD）等は一切不要です</p>
         </div>
     </section>
 
-    <section id="target" class="py-12 md:py-16 bg-white border-b">
+    <section id="target" class="py-20 bg-white border-b border-gray-50">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900 mb-12 serif-font">
                 本サービスは<br class="md:hidden">「ハイクラス物件」に特化しています
             </h2>
-            <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-12 items-center">
-                <div class="flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-location-dot text-amber-600 text-xl md:text-2xl"></i>
-                    <span class="text-lg md:text-xl font-bold">東京都内エリア</span>
+            <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 items-center">
+                <div class="flex flex-col items-center space-y-3">
+                    <i class="fa-solid fa-location-dot text-gold-600 text-3xl"></i>
+                    <span class="text-lg font-medium text-slate-700 tracking-wide">東京都内エリア</span>
                 </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-building text-amber-600 text-xl md:text-2xl"></i>
-                    <span class="text-lg md:text-xl font-bold">分譲マンション</span>
+                <div class="w-px h-12 bg-gray-200 hidden md:block"></div>
+                <div class="flex flex-col items-center space-y-3">
+                    <i class="fa-solid fa-building text-gold-600 text-3xl"></i>
+                    <span class="text-lg font-medium text-slate-700 tracking-wide">分譲マンション</span>
                 </div>
-                <div class="flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-yen-sign text-amber-600 text-xl md:text-2xl"></i>
-                    <span class="text-lg md:text-xl font-bold">家賃20万円以上</span>
+                <div class="w-px h-12 bg-gray-200 hidden md:block"></div>
+                <div class="flex flex-col items-center space-y-3">
+                    <i class="fa-solid fa-yen-sign text-gold-600 text-3xl"></i>
+                    <span class="text-lg font-medium text-slate-700 tracking-wide">家賃20万円以上</span>
                 </div>
             </div>
-            <p class="mt-6 text-gray-500 text-sm">※上記条件に当てはまらない場合でも、エリア等の条件により対応可能な場合がございます。</p>
+            <p class="mt-10 text-gray-400 text-xs tracking-wider">※上記条件に当てはまらない場合でも、エリア等の条件により対応可能な場合がございます。</p>
         </div>
     </section>
 
-    <section id="problem" class="py-16 md:py-20 bg-gray-50">
+    <section id="problem" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-2xl md:text-4xl font-bold text-center text-slate-800 mb-10 md:mb-12">
-                こんな「機会損失」をしていませんか？
-            </h2>
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
-                    <div class="text-amber-600 text-3xl md:text-4xl mb-4"><i class="fa-solid fa-user-slash"></i></div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">審査で優良顧客を逃している</h3>
-                    <p class="text-gray-600 text-sm md:text-base">「外国籍」という理由だけで、大手外資系企業のエンジニアや富裕層を入居審査で断っていませんか？彼らは日本人以上の支払い能力を持っています。</p>
+            <div class="text-center mb-16">
+                <span class="text-gold-600 font-bold text-xs tracking-[0.2em] uppercase block mb-2">Current Issues</span>
+                <h2 class="text-2xl md:text-4xl font-bold text-navy-900 serif-font">
+                    こんな「機会損失」をしていませんか？
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded shadow-sm border-t-4 border-navy-900 hover:shadow-lg transition duration-300">
+                    <div class="text-navy-900 text-4xl mb-6 opacity-80"><i class="fa-solid fa-user-slash"></i></div>
+                    <h3 class="text-lg font-bold mb-4 serif-font">審査で優良顧客を逃している</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">「外国籍」という理由だけで、大手外資系企業のエンジニアや富裕層を入居審査で断っていませんか？彼らは日本人以上の支払い能力を持っています。</p>
                 </div>
-                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
-                    <div class="text-amber-600 text-3xl md:text-4xl mb-4"><i class="fa-solid fa-clock"></i></div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">長引く空室期間</h3>
-                    <p class="text-gray-600 text-sm md:text-base">日本人だけをターゲットにした募集はレッドオーシャンです。競合物件が多い中、家賃を下げるしか選択肢がない状況に陥っていませんか？</p>
+                <div class="bg-white p-8 rounded shadow-sm border-t-4 border-navy-900 hover:shadow-lg transition duration-300">
+                    <div class="text-navy-900 text-4xl mb-6 opacity-80"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="text-lg font-bold mb-4 serif-font">長引く空室期間</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">日本人だけをターゲットにした募集はレッドオーシャンです。競合物件が多い中、家賃を下げるしか選択肢がない状況に陥っていませんか？</p>
                 </div>
-                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm">
-                    <div class="text-amber-600 text-3xl md:text-4xl mb-4"><i class="fa-solid fa-money-bill-wave"></i></div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">募集コストの負担</h3>
-                    <p class="text-gray-600 text-sm md:text-base">客付けのために高額な広告料（AD）やフリーレントを求められ、実質的な手取り収入が減っていませんか？</p>
+                <div class="bg-white p-8 rounded shadow-sm border-t-4 border-navy-900 hover:shadow-lg transition duration-300">
+                    <div class="text-navy-900 text-4xl mb-6 opacity-80"><i class="fa-solid fa-money-bill-wave"></i></div>
+                    <h3 class="text-lg font-bold mb-4 serif-font">募集コストの負担</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">客付けのために高額な広告料（AD）やフリーレントを求められ、実質的な手取り収入が減っていませんか？</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="solution" class="py-16 md:py-20 bg-slate-900 text-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-amber-500 font-bold tracking-wider uppercase">OUR SOLUTION</span>
-                <h2 class="text-2xl md:text-4xl font-bold mt-2">株式会社グロースプロパティが<br>そのお悩み解決します</h2>
+    <section id="solution" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-bold text-xs tracking-[0.2em] uppercase block mb-2">Our Solution</span>
+                <h2 class="text-2xl md:text-4xl font-bold mt-2 serif-font">株式会社グロースプロパティが<br>そのお悩み解決します</h2>
             </div>
 
-            <div class="flex flex-col md:flex-row items-start gap-8 md:gap-12">
-                <div class="md:w-1/2 md:sticky md:top-20">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Business Meeting" class="rounded-lg shadow-2xl mb-6">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="md:w-1/2 md:sticky md:top-24">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Business Meeting" class="rounded shadow-2xl grayscale hover:grayscale-0 transition duration-700">
                 </div>
 
-                <div class="md:w-1/2 space-y-8 md:space-y-10">
+                <div class="md:w-1/2 space-y-12">
                     
-                    <div class="flex">
+                    <div class="flex group">
                         <div class="flex-shrink-0 mt-1">
-                            <div class="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-md bg-amber-600 text-white">
-                                <i class="fa-solid fa-handshake text-lg md:text-xl"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded border border-gold-500/30 bg-navy-800 text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-handshake text-xl"></i>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg md:text-xl font-bold text-white">契約相手は「弊社」です</h3>
-                            <p class="mt-2 text-gray-400 text-sm md:text-base">オーナー様と直接契約を結ぶのは、日本法人である弊社です。家賃滞納リスクやコミュニケーションの不安は一切ございません。</p>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-white serif-font tracking-wide">契約相手は「弊社」です</h3>
+                            <p class="mt-3 text-gray-400 text-sm leading-relaxed">オーナー様と直接契約を結ぶのは、日本法人である弊社です。家賃滞納リスクやコミュニケーションの不安は一切ございません。</p>
                         </div>
                     </div>
 
-                    <div class="flex">
+                    <div class="flex group">
                         <div class="flex-shrink-0 mt-1">
-                            <div class="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-md bg-amber-600 text-white">
-                                <i class="fa-solid fa-piggy-bank text-lg md:text-xl"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded border border-gold-500/30 bg-navy-800 text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-piggy-bank text-xl"></i>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg md:text-xl font-bold text-white">広告料（AD）は「不要」です</h3>
-                            <p class="mt-2 text-gray-400 text-sm md:text-base">
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-white serif-font tracking-wide">広告料（AD）は「不要」です</h3>
+                            <p class="mt-3 text-gray-400 text-sm leading-relaxed">
                                 弊社が直接契約（または直接客付）を行うため、一般的な仲介で発生する広告料（家賃1ヶ月分等）をお支払いいただく必要はありません。オーナー様の手取り収益を最大化します。
                             </p>
                         </div>
                     </div>
                     
-                    <div class="flex">
+                    <div class="flex group">
                         <div class="flex-shrink-0 mt-1">
-                            <div class="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-md bg-amber-600 text-white">
-                                <i class="fa-solid fa-language text-lg md:text-xl"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded border border-gold-500/30 bg-navy-800 text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-language text-xl"></i>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg md:text-xl font-bold text-white">多言語対応・生活指導の徹底</h3>
-                            <p class="mt-2 text-gray-400 text-sm md:text-base">入居者とのやり取りの一次窓口は全て弊社（英語・中国語対応可能）が行います。日本の生活ルール（ゴミ出し・騒音等）を厳格に指導し、誓約させた上で鍵を引き渡します。</p>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-white serif-font tracking-wide">多言語対応・生活指導の徹底</h3>
+                            <p class="mt-3 text-gray-400 text-sm leading-relaxed">入居者とのやり取りの一次窓口は全て弊社（英語・中国語対応可能）が行います。日本の生活ルール（ゴミ出し・騒音等）を厳格に指導し、誓約させた上で鍵を引き渡します。</p>
                         </div>
                     </div>
 
-                    <div class="flex">
+                    <div class="flex group">
                         <div class="flex-shrink-0 mt-1">
-                            <div class="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-md bg-amber-600 text-white">
-                                <i class="fa-solid fa-shield-halved text-lg md:text-xl"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded border border-gold-500/30 bg-navy-800 text-gold-500 group-hover:bg-gold-500 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg md:text-xl font-bold text-white">保証会社完備でリスクなし</h3>
-                            <p class="mt-2 text-gray-400 text-sm md:text-base">外国人対応の保証会社への加入を原則としています。万が一の滞納や原状回復費用も保証されるため、オーナー様の金銭的リスクを排除します。</p>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-white serif-font tracking-wide">保証会社完備でリスクなし</h3>
+                            <p class="mt-3 text-gray-400 text-sm leading-relaxed">外国人対応の保証会社への加入を原則としています。万が一の滞納や原状回復費用も保証されるため、オーナー様の金銭的リスクを排除します。</p>
                         </div>
                     </div>
 
-                    <div class="flex bg-slate-800 p-4 rounded-lg border border-amber-600/30">
+                    <div class="flex p-6 rounded border border-gold-500/50 bg-navy-800/50 backdrop-blur-sm">
                         <div class="flex-shrink-0 mt-1">
-                            <div class="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-md bg-amber-600 text-white">
-                                <i class="fa-solid fa-chart-line text-lg md:text-xl"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded bg-gold-500 text-white">
+                                <i class="fa-solid fa-chart-line text-xl"></i>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg md:text-xl font-bold text-amber-400">空室期間を短縮する「独自の仕組み」</h3>
-                            <p class="mt-2 text-gray-300 text-sm md:text-base">
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-gold-400 serif-font tracking-wide">空室期間を短縮する「独自の仕組み」</h3>
+                            <p class="mt-3 text-gray-300 text-sm leading-relaxed">
                                 弊社と入居者の間では「解約予告期間」を一定長く取ることで、リーシング期間を長くし、空室期間を極力を無くすことが実現可能な仕組みを提供します。
                             </p>
                         </div>
@@ -192,75 +241,88 @@
         </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-gray-50">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8">弊社が案内する「入居者属性」</h2>
-            <p class="text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto text-sm md:text-base">
-                やみくもに募集するのではなく、信用力の高い層に絞ってアプローチを行います。
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900 mb-4 serif-font">ご案内する「入居者属性」</h2>
+            <p class="text-gray-500 mb-12 max-w-2xl mx-auto text-sm tracking-wide">
+                信用力の高い層に厳選してアプローチを行います。
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="bg-white p-4 md:p-6 rounded-lg shadow border-b-4 border-amber-500">
-                    <div class="text-2xl md:text-3xl text-slate-700 mb-2"><i class="fa-solid fa-laptop-code"></i></div>
-                    <div class="font-bold text-sm md:text-base">外資系ITエンジニア</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="bg-gray-50 p-6 rounded border border-gray-100 hover:border-gold-500 transition duration-300 group">
+                    <div class="text-3xl text-gray-400 group-hover:text-navy-900 mb-3 transition"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="font-bold text-navy-900 text-sm md:text-base">外資系ITエンジニア</div>
                 </div>
-                <div class="bg-white p-4 md:p-6 rounded-lg shadow border-b-4 border-amber-500">
-                    <div class="text-2xl md:text-3xl text-slate-700 mb-2"><i class="fa-solid fa-building"></i></div>
-                    <div class="font-bold text-sm md:text-base">駐在員・経営者</div>
+                <div class="bg-gray-50 p-6 rounded border border-gray-100 hover:border-gold-500 transition duration-300 group">
+                    <div class="text-3xl text-gray-400 group-hover:text-navy-900 mb-3 transition"><i class="fa-solid fa-building"></i></div>
+                    <div class="font-bold text-navy-900 text-sm md:text-base">駐在員・経営者</div>
                 </div>
-                <div class="bg-white p-4 md:p-6 rounded-lg shadow border-b-4 border-amber-500">
-                    <div class="text-2xl md:text-3xl text-slate-700 mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="font-bold text-sm md:text-base">大学招聘研究員</div>
+                <div class="bg-gray-50 p-6 rounded border border-gray-100 hover:border-gold-500 transition duration-300 group">
+                    <div class="text-3xl text-gray-400 group-hover:text-navy-900 mb-3 transition"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="font-bold text-navy-900 text-sm md:text-base">大学招聘研究員</div>
                 </div>
-                <div class="bg-white p-4 md:p-6 rounded-lg shadow border-b-4 border-amber-500">
-                    <div class="text-2xl md:text-3xl text-slate-700 mb-2"><i class="fa-solid fa-plane"></i></div>
-                    <div class="font-bold text-sm md:text-base">富裕層セカンドハウス</div>
+                <div class="bg-gray-50 p-6 rounded border border-gray-100 hover:border-gold-500 transition duration-300 group">
+                    <div class="text-3xl text-gray-400 group-hover:text-navy-900 mb-3 transition"><i class="fa-solid fa-plane"></i></div>
+                    <div class="font-bold text-navy-900 text-sm md:text-base">富裕層セカンドハウス</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-16 md:py-20 bg-white">
+    <section id="faq" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-slate-800 mb-10 md:mb-12">よくあるご質問</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900 mb-12 serif-font">よくあるご質問</h2>
             
-            <div class="space-y-6">
-                <div class="border-b pb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-700 mb-2">Q. 現在の管理会社を解約する必要がありますか？</h3>
-                    <p class="text-gray-600 text-sm md:text-base">A. いいえ、必要ありません。現在の管理会社様はそのままご継続いただき、弊社はあくまで「借主（入居者）」として契約させていただきます。管理会社様との関係を維持したまま、収益性のみを高めることが可能です。</p>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-navy-900 mb-3 flex items-center">
+                        <span class="text-gold-500 mr-3">Q.</span>現在の管理会社を解約する必要がありますか？
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed pl-6 border-l-2 border-gray-100">いいえ、必要ありません。現在の管理会社様はそのままご継続いただき、弊社はあくまで「借主（入居者）」として契約させていただきます。管理会社様との関係を維持したまま、収益性のみを高めることが可能です。</p>
                 </div>
                 
-                <div class="border-b pb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-700 mb-2">Q. 成約時に広告料（AD）の支払いは必要ですか？</h3>
-                    <p class="text-gray-600 text-sm md:text-base">A. いいえ、不要です。弊社が直接契約当事者となる（または直接ご紹介する）ため、通常の仲介で発生するオーナー様からの広告料支払いは一切不要です。</p>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-navy-900 mb-3 flex items-center">
+                        <span class="text-gold-500 mr-3">Q.</span>成約時に広告料（AD）の支払いは必要ですか？
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed pl-6 border-l-2 border-gray-100">いいえ、不要です。弊社が直接契約当事者となる（または直接ご紹介する）ため、通常の仲介で発生するオーナー様からの広告料支払いは一切不要です。</p>
                 </div>
 
-                <div class="border-b pb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-700 mb-2">Q. 転貸（サブリース）に不安がありますが、大丈夫なのでしょうか？</h3>
-                    <p class="text-gray-600 text-sm md:text-base">A. 一般的なサブリースですと入居者が分からないケースがありますが、弊社のサービスではどんな入居者なのかをオーナー様に開示いたしますので、安心してご依頼いただけます。</p>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-navy-900 mb-3 flex items-center">
+                        <span class="text-gold-500 mr-3">Q.</span>転貸（サブリース）に不安がありますが、大丈夫なのでしょうか？
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed pl-6 border-l-2 border-gray-100">一般的なサブリースですと入居者が分からないケースがありますが、弊社のサービスではどんな入居者なのかをオーナー様に開示いたしますので、安心してご依頼いただけます。</p>
                 </div>
 
-                <div class="border-b pb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-slate-700 mb-2">Q. 入居者とのトラブル対応はどうなりますか？</h3>
-                    <p class="text-gray-600 text-sm md:text-base">A. 文化の違いによるトラブルを防ぐため、入居前に日本の生活ルールを徹底指導します。また、万が一クレームが発生した場合も、弊社が一次窓口となり丁寧に対応いたします。</p>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-navy-900 mb-3 flex items-center">
+                        <span class="text-gold-500 mr-3">Q.</span>入居者とのトラブル対応はどうなりますか？
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed pl-6 border-l-2 border-gray-100">文化の違いによるトラブルを防ぐため、入居前に日本の生活ルールを徹底指導します。また、万が一クレームが発生した場合も、弊社が一次窓口となり丁寧に対応いたします。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-20 bg-slate-800 text-white text-center">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-2xl md:text-4xl font-bold mb-6">オーナー様の手間は一切増やしません。<br>まずは「無料相談」から。</h2>
-            <p class="text-gray-400 mb-8 md:mb-10 text-sm md:text-lg">
+    <section id="contact" class="py-20 bg-navy-900 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 serif-font leading-relaxed">
+                オーナー様の手間は一切増やしません。<br>
+                まずは「無料相談」から。
+            </h2>
+            <p class="text-gray-400 mb-12 text-sm md:text-base tracking-wide">
                 「なかなか決まらない物件」が、グローバル需要で「ドル箱物件」に変わります。<br>
                 お急ぎの場合はお電話でも承っております。
             </p>
-            <div class="bg-white text-slate-800 max-w-2xl mx-auto rounded-xl p-6 md:p-8 shadow-2xl">
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 max-w-2xl mx-auto rounded-lg p-8 md:p-10 shadow-2xl">
                 <div class="flex justify-center">
-                    <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-lg text-lg transition duration-300 block text-center">
+                    <a href="https://409ilc.share-na2.hsforms.com/2JbXJgMt0TZKPRgSCmX2O3Q" target="_blank" class="w-full btn-gold text-white font-bold py-5 rounded-lg text-lg md:text-xl transition duration-300 block text-center shadow-lg transform hover:-translate-y-1">
                         借上げ・法人契約の相談をする（無料）
                     </a>
                 </div>
-                <p class="mt-6 text-xs md:text-sm text-gray-500">
+                <p class="mt-6 text-xs text-gray-400 leading-relaxed">
                     ※上記ボタンをクリックすると、相談受付フォーム（外部サイト）へ移動します。<br>
                     強引な営業は一切いたしません。
                 </p>
@@ -268,30 +330,33 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 md:py-10 border-t border-gray-800">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div>
-                <div class="text-xl md:text-2xl font-bold text-white mb-2">Growth Property</div>
-                <p class="text-sm font-bold">株式会社グロースプロパティ</p>
-                <p class="text-sm mt-1">〒141-0001 東京都品川区北品川５丁目５番１５号<br class="md:hidden">大崎ブライトコア４階</p>
-                <p class="text-sm mt-1 font-bold">TEL: 03-4563-9965</p>
-                <p class="text-sm mt-1">
-                    企業HP: <a href="https://growth-property.jp/" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:underline">https://growth-property.jp/</a>
-                </p>
+    <footer class="bg-navy-900 text-gray-500 py-12 border-t border-navy-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div class="text-center md:text-left">
+                <div class="text-xl font-bold text-white mb-2 serif-font">Growth Property</div>
+                <p class="text-xs font-bold text-gray-400 tracking-wider">株式会社グロースプロパティ</p>
+                <div class="mt-4 text-xs leading-relaxed">
+                    <p>〒141-0001</p>
+                    <p>東京都品川区北品川５丁目５番１５号<br class="md:hidden">大崎ブライトコア４階</p>
+                    <p class="mt-2 font-bold text-white">TEL: 03-4563-9965</p>
+                    <p class="mt-2">
+                        企業HP: <a href="https://growth-property.jp/" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-500 underline transition">https://growth-property.jp/</a>
+                    </p>
+                </div>
             </div>
-            <div>
-                <a href="https://growth-property.jp/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center md:justify-start space-x-2 transition duration-300">
-                    <span class="bg-slate-800 p-3 rounded-full group-hover:bg-amber-600 transition">
-                        <i class="fa-solid fa-building text-xl md:text-2xl text-white"></i>
+            <div class="w-full md:w-auto flex justify-center md:justify-end">
+                <a href="https://growth-property.jp/" target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-3 transition duration-300 border border-navy-800 px-6 py-3 rounded hover:border-gold-600/50">
+                    <span class="bg-navy-800 p-2 rounded-full group-hover:bg-gold-600 transition duration-500">
+                        <i class="fa-solid fa-building text-lg text-white"></i>
                     </span>
-                    <span class="text-lg md:text-xl font-bold text-white group-hover:text-amber-500 transition">
+                    <span class="text-sm font-bold text-gray-300 group-hover:text-white transition">
                         Corporate Site
-                        <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1 opacity-70"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1 opacity-50"></i>
                     </span>
                 </a>
             </div>
         </div>
-        <div class="text-center mt-8 md:mt-10 text-xs border-t border-gray-800 pt-6">
+        <div class="text-center mt-12 text-[10px] text-gray-600 border-t border-navy-800 pt-8 tracking-wider">
             &copy; 2025 Growth Property Co., Ltd. All Rights Reserved.
         </div>
     </footer>
